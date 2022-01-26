@@ -5,6 +5,9 @@ import uuid
 import os
 from datetime import datetime
 
+import entities.sHumidity
+from entities import *
+
 if __name__ == '__main__':
 
     # Params
