@@ -8,7 +8,7 @@ from datetime import datetime
 
 class Sensor(object):
 
-    def __init__(self, writeLocation, srcLocation):
+    def __init__(self, writeLocation: str, srcLocation: str) -> None:
         self.srcLocation = srcLocation
         self.writeLocation = writeLocation
 
