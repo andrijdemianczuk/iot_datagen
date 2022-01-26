@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/IoT_Sensor_Template/Location.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/IoT_Sensor_Template/Location_Type.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/IoT_Sensor_Template/Manufacturer.csv">
           <value>
             <Attribute>
