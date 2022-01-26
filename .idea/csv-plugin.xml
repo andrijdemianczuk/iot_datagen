@@ -10,7 +10,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/IoT_Sensor_Template/Humidity.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/IoT_Sensor_Template/Light.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/IoT_Sensor_Template/Location.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/IoT_Sensor_Template/Location_Type.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -25,6 +46,34 @@
           </value>
         </entry>
         <entry key="/IoT_Sensor_Template/Prox.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temp/Humidity.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temp/Humidity_45973cae-fac2-408c-ba2c-3e148719c8f2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temp/Humidity_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temp/demofile2.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
