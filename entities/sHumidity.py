@@ -3,7 +3,6 @@ from entities import sensor
 
 class Humidity(sensor.Sensor):
 
-    def __init__(self, filetype="csv"):
-        super().__init__()
+    def __init__(self, writeLocation, srcLocation):
+        super().__init__(writeLocation, srcLocation)
         self.name = "Humidity"
-        self.fileType = filetype
