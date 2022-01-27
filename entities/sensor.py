@@ -8,20 +8,23 @@ from datetime import datetime
 
 class Sensor(object):
 
-    def __init__(self, writeLocation: str, srcLocation: str) -> None:
-        self.offsetDay = {"0": 1.0, "1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0, "5": 0.9, "6": 0.9}  # Monday is 0 Sunday is 6
-        self.offsetHr = {"0": 0.68, "1": 0.69, "2": 0.7, "3": 0.66, "4": 0.65, "5": 0.72, "6": 0.85, "7": 0.88, "8": 0.9,
-                    "9": 0.94,
-                    "10": 1.0, "11": 1.1, "12": 1.17, "13": 1.15, "14": 1.11, "15": 1.1, "16": 0.99, "17": 0.97,
-                    "18": 0.95,
-                    "19": 0.9, "20": 0.7, "21": 0.72, "22": 0.75, "23": 0.7}
+    def __init__(self, writeLocation="temp/", srcLocation="IoT_Sensor_Template/") -> None:
+        self.offsetDay = {"0": 1.0, "1": 1.0, "2": 1.0, "3": 1.0, "4": 1.0, "5": 0.9,
+                          "6": 0.9}  # Monday is 0 Sunday is 6
+        self.offsetHr = {"0": 0.68, "1": 0.69, "2": 0.7, "3": 0.66, "4": 0.65, "5": 0.72, "6": 0.85, "7": 0.88,
+                         "8": 0.9,
+                         "9": 0.94,
+                         "10": 1.0, "11": 1.1, "12": 1.17, "13": 1.15, "14": 1.11, "15": 1.1, "16": 0.99, "17": 0.97,
+                         "18": 0.95,
+                         "19": 0.9, "20": 0.7, "21": 0.72, "22": 0.75, "23": 0.7}
         self.srcLocation = srcLocation
         self.writeLocation = writeLocation
         self.guid = str(uuid.uuid4())
         self.epoch_time = int(time.time())
         self.offset = self.getOffset(self.epoch_time)
+        self.fileRolloverLimitB = 10485760  # 10Mb per file
 
-    def openFile(self):
+    def openFile(self, filepath: str) -> object:
         print("")
 
     def readFile(self):
@@ -33,21 +36,20 @@ class Sensor(object):
 
         return self.offsetHr[str(d.hour)] * self.offsetDay[str(dayOfWeek)]
 
+    def rollover(self):
+        # Rollover the file if it's greater or equal to the limit.
+        if os.stat(self.filePath).st_size >= self.fileRolloverLimitB:
+            os.rename(self.filePath, self.newFilePath)
+
     def run(self):
         # Params
-        fileStore = "temp/"
-        filePath = fileStore + "Humidity_data.csv"
-        newFilePath = fileStore + "Humidity_data_" + self.guid + ".csv"
         fileIsEmpty = False
 
-        # fileRolloverLimitB = 10485760 #10Mb per file
-        fileRolloverLimitB = 1048576  # 1MB per file
-
         # Open the file if exists and append, otherwise create a new one at the specified file path
-        f1 = open(filePath, "a")
+        f1 = open(self.filePath, "a")
 
         # Set a flag to check if the file is empty.
-        if os.stat(filePath).st_size == 0:
+        if os.stat(self.filePath).st_size == 0:
             fileIsEmpty = True
 
         # Open the source (template) file, only write the header if the file is new
@@ -78,7 +80,4 @@ class Sensor(object):
                         {ord(i): None for i in '[]\''}))  # Remove the unwanted characters '[', ']' and '''
                 f1.write("\r\n")
         f1.close()
-
-        # Rollover the file if it's greater or equal to the limit.
-        if os.stat(filePath).st_size >= fileRolloverLimitB:
-            os.rename(filePath, newFilePath)
+        self.rollover()
