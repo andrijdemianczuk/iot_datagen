@@ -54,7 +54,7 @@ class Sensor(object):
         srcFile = self.srcLocation + self.srcName
 
         #Process the file output
-        self.processObjFile(srcFile, f1) #This is in the derived class - It's essentially an abstract factory
+        self.processObjFile(srcFile, f1) #This is each derived class - It's essentially an abstract factory
 
         #Check and apply rollover
         self.rollover()
