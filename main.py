@@ -1,7 +1,6 @@
 from entities import sHumidity, sProx, sTemp, sLight, sPressure
 
 if __name__ == '__main__':
-    #TODO: Refactor the objects as a duck type later
     sHumidity.Humidity("temp/", "IoT_Sensor_Template/").run()
     sProx.Prox("temp/", "IoT_Sensor_Template/").run()
     sTemp.Temp("temp/", "IoT_Sensor_Template/").run()
