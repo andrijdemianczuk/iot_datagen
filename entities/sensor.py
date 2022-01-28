@@ -1,6 +1,4 @@
-import csv
 import time
-import random
 import uuid
 import os
 from datetime import datetime
