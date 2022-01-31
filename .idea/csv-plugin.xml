@@ -52,28 +52,21 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/temp/Humidity.csv">
+        <entry key="/temp/Light_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/temp/Humidity_45973cae-fac2-408c-ba2c-3e148719c8f2.csv">
+        <entry key="/temp/Pressure_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/temp/Humidity_data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/temp/demofile2.csv">
+        <entry key="/temp/Prox_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

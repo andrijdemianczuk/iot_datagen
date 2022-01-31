@@ -1,1 +1,1 @@
-from sensor import Sensor
+from entities.sensor import Sensor
