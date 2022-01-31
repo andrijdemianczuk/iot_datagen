@@ -25,15 +25,15 @@ class Light(sensor.Sensor):
                     row[2] = self.epoch_time
                 if row[1] == "0":  # Change the value range based on location
                     if 1 <= int(row[3]) <= 130:  # Seattle
-                        row[1] = round(random.randint(55, 85) * self.offset, 2)
+                        row[1] = round(random.randint(600, 750) * self.offset, 2)
                     elif 131 <= int(row[3]) <= 420:  # Portland
-                        row[1] = round(random.randint(50, 75) * self.offset, 2)
+                        row[1] = round(random.randint(600, 750) * self.offset, 2)
                     elif 421 <= int(row[3]) <= 835:  # San Francisco
-                        row[1] = round(random.randint(65, 80) * self.offset, 2)
+                        row[1] = round(random.randint(650, 825) * self.offset, 2)
                     elif 836 <= int(row[3]) <= 880:  # Helena
-                        row[1] = round(random.randint(35, 55) * self.offset, 2)
+                        row[1] = round(random.randint(750, 900) * self.offset, 2)
                     else:  # Boise
-                        row[1] = round(random.randint(20, 50) * self.offset, 2)
+                        row[1] = round(random.randint(700, 875) * self.offset, 2)
                 # rowStr = str(row)
                 f1.write(
                     str(row).translate(

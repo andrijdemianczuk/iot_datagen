@@ -1,4 +1,4 @@
-Device_ID,NFC_Tag_ID,Timestamp,Location_ID,Manufacturer_ID
+Device_ID,NFC_Tag_Count,Timestamp,Location_ID,Manufacturer_ID
 1,0,0,1,4
 2,0,0,2,5
 3,0,0,3,5
