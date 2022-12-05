@@ -6,3 +6,5 @@ if __name__ == '__main__':
     sTemp.Temp("temp/", "IoT_Sensor_Template/").run()
     sLight.Light("temp/", "IoT_Sensor_Template/").run()
     sPressure.Pressure("temp/", "IoT_Sensor_Template/").run()
+
+    #Add option to export to kafka sink. e.g., sProx().kafka() or something like that.
