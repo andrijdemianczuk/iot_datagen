@@ -40,3 +40,15 @@ class Humidity(sensor.Sensor):
                         {ord(i): None for i in '[]\''}))  # Remove the unwanted characters '[', ']' and '''
                 f1.write("\r\n")
         f1.close()
+
+
+class KHumidity(sensor.KSensor):
+
+    def __init__(self, topic: str = "default", bootstrap_servers: [] = 'localhost') -> None:
+        super().__init__(topic, bootstrap_servers)
+        self.srcName = "Humidity.csv"
+        self.topic = topic
+        self.bootstrap_servers = bootstrap_servers
+
+    def generateStreamSource(self):
+        pass
